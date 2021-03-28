@@ -6,7 +6,7 @@ var result = document.createElement("input");
 result.setAttribute("type", "text");
 result.setAttribute("class", "numInputed");
 result.setAttribute("Value", "");
-result.setAttribute("disabled", true);
+result.setAttribute("disabled", "true");
 calcs.appendChild(result);
 
 // addeventlistener to each button
@@ -22,14 +22,9 @@ function calculate(event) {
     if(btnNumberValue === "=") {
         if(result.value != '') {
             result.value = eval(result.value);
-            if(result.value === ".") {
-                result.value = eval(result.value).toFixed(2);
-            }
         }
     } else if(btnNumberValue === "AC") {
         result.value = '';
-    } else if(btnNumberValue === "^") {
-
     } else {
         result.value += btnNumberValue;
     }
